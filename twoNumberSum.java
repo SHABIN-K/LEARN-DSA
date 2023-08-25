@@ -1,10 +1,33 @@
+import java.util.HashSet;
+import java.util.Set;
+
 public class Main {
     public static int[] twoNumberSum(int [] array, int target){
-        for(int i = 0; i < array.length-1; i++){
-            for (int j = i+1; j < array.length; j++) {
-                if (array[i] + array[j] == target) {
-                    return new int[]{array[i],array[j]};
-                }
+
+        //first method
+        //n(n^2)t
+        //n(1)s
+        //for(int i = 0; i < array.length-1; i++){
+        //    for (int j = i+1; j < array.length; j++) {
+        //        if (array[i] + array[j] == target) {
+        //            return new int[]{array[i],array[j]};
+        //        }
+        //    }
+        //}
+        //return new int[0];
+
+        //second method
+        //n(n)t
+        //n(n)s
+
+        Set<Integer> nums = new HashSet<>();
+        for (int i = 0; i < array.length; i++) {
+            int num = array[i];
+            int match = target - num;
+            if(nums.contains(match))  {
+               return new int[]{num, match};
+            } else {
+                nums.add(num);
             }
         }
         return new int[0];
