@@ -5,8 +5,8 @@ public class Main {
     public static int[] twoNumberSum(int [] array, int target){
 
         //first method
-        //n(n^2)t
-        //n(1)s
+        //Time Complexity  : n(n^2)
+        //Space Complexity : n(1)
         //for(int i = 0; i < array.length-1; i++){
         //    for (int j = i+1; j < array.length; j++) {
         //        if (array[i] + array[j] == target) {
@@ -17,8 +17,8 @@ public class Main {
         //return new int[0];
 
         //second method
-        //n(n)t
-        //n(n)s
+        //Time Complexity  : n(n)
+        //Space Complexity : n(n)
 
         Set<Integer> nums = new HashSet<>();
         for (int i = 0; i < array.length; i++) {
